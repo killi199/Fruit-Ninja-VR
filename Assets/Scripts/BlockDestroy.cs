@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class BlockDestroy : MonoBehaviour
 {
+    public float timeToDestroy;
     private bool _isDestroying;
-    private int _timeToDestroy;
-    public int timeToDestroy;
+    private float _timeToDestroy;
+    private Renderer _renderer;
 
+    private void Start()
+    {
+        _renderer = GetComponent<Renderer>();
+    }
+    
     public void OnHoverEnter()
     {
         _timeToDestroy = timeToDestroy;
@@ -19,14 +25,17 @@ public class BlockDestroy : MonoBehaviour
 
     private void Update()
     {
-        if (!_isDestroying) return;
-        //var color = (timeToDestroy - _timeToDestroy) * 255 / timeToDestroy;
-        //gameObject.GetComponent<Renderer>().material.color = new Color(color, color, color);
+        if (!_isDestroying)
+        {
+            _renderer.material.color = Color.grey;
+            return;
+        }
         if (_timeToDestroy <= 0)
         {
             gameObject.SetActive(false);
         }
-        
+        var t = (timeToDestroy - _timeToDestroy) / timeToDestroy;
+        _renderer.material.color = Color.Lerp(Color.grey, Color.red, t);
         _timeToDestroy--;
     }
 }
