@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -8,10 +7,12 @@ public class ObjectSpawner : MonoBehaviour
     public float spawnInterval = 1.0f; // Intervall zwischen den Spawns
     public Vector3 spawnOffset = Vector3.zero; // Offset zur Position des Spawners
     public Vector3 randomRotationRange = new Vector3(0f, 360f, 0f); // Bereich für die zufällige Rotation
+    private Renderer _renderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        _renderer = GetComponent<Renderer>();
         StartCoroutine(SpawnObjects());
     }
 
@@ -31,8 +32,7 @@ public class ObjectSpawner : MonoBehaviour
 
     Vector3 GetRandomSpawnPosition()
     {
-        Renderer spawnerRenderer = GetComponent<Renderer>();
-        Bounds spawnerBounds = spawnerRenderer.bounds;
+        Bounds spawnerBounds = _renderer.bounds;
 
         float x = Random.Range(-spawnerBounds.extents.x, spawnerBounds.extents.x);
         float z = Random.Range(-spawnerBounds.extents.z, spawnerBounds.extents.z);
@@ -55,12 +55,5 @@ public class ObjectSpawner : MonoBehaviour
         float z = Random.Range(randomRotationRange.x, randomRotationRange.y);
 
         return new Vector3(x, y, z);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
