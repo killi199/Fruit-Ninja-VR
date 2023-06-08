@@ -32,7 +32,7 @@ public class BlockDestroy : MonoBehaviour
         }
         if (_timeToDestroy <= 0)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         var t = (timeToDestroy - _timeToDestroy) / timeToDestroy;
         _renderer.material.color = Color.Lerp(Color.grey, Color.red, t);
