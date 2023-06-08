@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -370593603989072766}
   m_Layer: 0
   m_Name: pear
-  m_TagString: FruitAnnihalator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
