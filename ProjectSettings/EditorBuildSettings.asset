@@ -5,9 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/LowPolyFarmLite/Scenes/LowPolyFarmLite_Demo.unity
     guid: 02b22eabe90848144a0d8977d339b3ee
+  - enabled: 1
+    path: Assets/Samples/WebXR Interactions/0.16.3-preview/Sample Scene/Scenes/Desert.unity
+    guid: 85380d4847db7b74a850284461349c36
   m_configObjects:
+    WebXR.Settings: {fileID: 11400000, guid: bc8cc68d2768e3f49ad143c32f3792eb, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 003762fcaac57804b83bf0d226d2cbd8, type: 2}
     xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 8d73ac4441ba274428c23389be2a38e7, type: 2}
