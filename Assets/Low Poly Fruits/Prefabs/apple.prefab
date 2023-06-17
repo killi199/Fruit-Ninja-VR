@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40fcb6238bcc4881902de8678385ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 2
+  fallSpeed: 1.75
   deleteUnderY: -5
 --- !u!114 &-7759153413003662066
 MonoBehaviour:
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6e72ede63c254da189f6262893dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroy: 350
+  timeToDestroy: 30
 --- !u!114 &-1767219882294157316
 MonoBehaviour:
   m_ObjectHideFlags: 0
