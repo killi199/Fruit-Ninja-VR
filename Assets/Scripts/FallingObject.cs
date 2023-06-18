@@ -4,6 +4,13 @@ public class FallingObject : MonoBehaviour
 {
     public float fallSpeed = 3f; // Geschwindigkeit, mit der das Objekt fällt
     public float deleteUnderY = -5f;
+    private ChangeText changeTextScript;
+
+    private void Start()
+    {
+        GameObject textGameObject = GameObject.Find("Schildtext");
+        changeTextScript = textGameObject.GetComponent<ChangeText>();
+    }
 
     private void Update()
     {
@@ -15,6 +22,7 @@ public class FallingObject : MonoBehaviour
         {
             // Lösche das Objekt
             Destroy(gameObject);
+            changeTextScript.updateLives(-1);
         }
     }
 }
